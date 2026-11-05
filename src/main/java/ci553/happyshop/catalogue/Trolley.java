@@ -59,7 +59,15 @@ public class Trolley {
      * }
      */
     public void addProduct(Product product) {
-        products.add(product); // product is appended to the end of the trolley
+        products.add(product);// product is appended to the end of the trolley
+    }
+
+    public void addOrgProduct(Product product) {
+        if(products.contains(product)) {
+            product.setOrderedQuantity(product.getOrderedQuantity() + 1);
+        }
+        else {
+            products.add(product); }// product is appended to the end of the trolley
     }
 
     public ArrayList<Product> getProducts() {
