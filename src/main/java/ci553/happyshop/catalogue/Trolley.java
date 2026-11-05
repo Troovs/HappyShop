@@ -1,6 +1,8 @@
 package ci553.happyshop.catalogue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Trolley {
 
@@ -63,11 +65,14 @@ public class Trolley {
     }
 
     public void addOrgProduct(Product product) {
+
         if(products.contains(product)) {
             product.setOrderedQuantity(product.getOrderedQuantity() + 1);
+
         }
         else {
             products.add(product); }// product is appended to the end of the trolley
+        Collections.sort(products);
     }
 
     public ArrayList<Product> getProducts() {
